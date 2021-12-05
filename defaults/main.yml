@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-role-path-picker
+facebook_fpp_src: /usr/local/PathPicker
+facebook_fpp_bin: /usr/local/bin/fpp

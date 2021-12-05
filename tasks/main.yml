@@ -1,0 +1,16 @@
+---
+# tasks file for ansible-role-path-picker
+#
+# See https://github.com/facebook/PathPicker#manual-installation
+
+- name: Clone facebook/PathPicker
+  ansible.builtin.git:
+    repo: https://github.com/facebook/PathPicker.git
+    dest: "{{ facebook_fpp_src }}"
+
+- name: Link fpp executable to bin directory
+  ansible.builtin.file:
+    src: "{{ facebook_fpp_src }}/fpp"
+    dest: "{{ facebook_fpp_bin }}"
+    state: link
+    mode: u=rwx,g=rx,o=rx
